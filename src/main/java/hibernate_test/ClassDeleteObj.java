@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ClassObjectAdd {
+public class ClassDeleteObj {
     public static void main(String[] args) throws SQLException {
 
         SessionFactory factory = new Configuration()
@@ -22,11 +22,10 @@ public class ClassObjectAdd {
         try {
             Session session = factory.getCurrentSession();
 
-            EmployeesEntity employees1 = new EmployeesEntity("Ion", "Covalciuc", "IT", 1000);
-            EmployeesEntity employees6 = new EmployeesEntity("Dan", "Sandu", "IT", 1000);
             session.beginTransaction();
-            EmployeesEntity emp = session.get(EmployeesEntity.class,2);
-            emp.setSalary(875);
+//            EmployeesEntity emp = session.get(EmployeesEntity.class,4);
+//            session.detach(emp);
+            session.createQuery("delete EmployeesEntity where surname = 'Popescu'");
             session.getTransaction().commit();
 
         }

@@ -11,7 +11,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class ClassObjectAdd {
+public class ClassShowObj {
     public static void main(String[] args) throws SQLException {
 
         SessionFactory factory = new Configuration()
@@ -23,10 +23,11 @@ public class ClassObjectAdd {
             Session session = factory.getCurrentSession();
 
             EmployeesEntity employees1 = new EmployeesEntity("Ion", "Covalciuc", "IT", 1000);
-            EmployeesEntity employees6 = new EmployeesEntity("Dan", "Sandu", "IT", 1000);
+            EmployeesEntity employees2 = new EmployeesEntity("Dan", "Covalciuc", "IT", 1000);
+            int myID = employees2.getId();
+            session = factory.getCurrentSession();
             session.beginTransaction();
-            EmployeesEntity emp = session.get(EmployeesEntity.class,2);
-            emp.setSalary(875);
+            Employees emp = session.get(Employees.class,myID);
             session.getTransaction().commit();
 
         }

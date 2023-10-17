@@ -87,4 +87,15 @@ public class EmployeesEntity {
     public int hashCode() {
         return Objects.hash(id, name, surname, departament, salary);
     }
+
+    @Override
+    public String toString() {
+        return "EmployeesEntity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", departament='" + departament + '\'' +
+                ", salary=" + salary +
+                '}';
+    }
 }
