@@ -23,9 +23,9 @@ public class ClassDeleteObj {
             Session session = factory.getCurrentSession();
 
             session.beginTransaction();
-//            EmployeesEntity emp = session.get(EmployeesEntity.class,4);
-//            session.detach(emp);
-            session.createQuery("delete EmployeesEntity where surname = 'Popescu'");
+            EmployeesEntity emp = session.get(EmployeesEntity.class,6);
+            session.delete(emp);
+//            session.createQuery("delete EmployeesEntity where surname = 'Popescu'");
             session.getTransaction().commit();
 
         }

@@ -25,10 +25,10 @@ public class ClassSetObj {
             EmployeesEntity employees1 = new EmployeesEntity("Ion", "Covalciuc", "IT", 1000);
             EmployeesEntity employees6 = new EmployeesEntity("Dan", "Sandu", "IT", 1000);
             session.beginTransaction();
-//            EmployeesEntity emp = session.get(EmployeesEntity.class,2);
-//            emp.setSalary(875);
-            session.createQuery("update EmployeesEntity set salary = 1235"
-                    +" where surname='Dragomir'");
+            EmployeesEntity emp = session.get(EmployeesEntity.class,4);
+            emp.setSalary(3244);
+//            session.createQuery("update EmployeesEntity set salary = 1235"
+//                    +" where surname='Dragomir'");
             session.getTransaction().commit();
 
         }
